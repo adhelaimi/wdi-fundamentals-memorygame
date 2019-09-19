@@ -16,7 +16,7 @@ var cards = ["King of Diamonds", "Queen of Diamonds", "King of Hearts", "Queen o
 
 var cardsInPlay = [];
 //CARD ONE
-var cardOne = cards[0];
+/*var cardOne = cards[0];
 cardsInPlay.push('cardOne');
 console.log("User flipped" + cardOne);
 
@@ -33,16 +33,36 @@ console.log("User flipped" + cardThree);
 //CARD Four
 var cardFour = cards[3];
 cardsInPlay.push('cardFour');
-console.log("User flipped" + cardFour );
+console.log("User flipped" + cardFour );*/
 
 
-if (cardsInPlay.length === 4) {
+var checkForMatch = function () {
 
   if (cardsInPlay[0] === cardsInPlay[1]) {
-    alert("You found a match!");
+    console.log("You found a match!");
   } else {
-    alert("Sorry, try again.");
+    console.log("Sorry, try again.");
 
   }
 }
 
+// user flipping a card
+var flipCard = function (cardId) {
+
+  // the card the user just flipped in the console
+  console.log("User flipped " + cards[cardId]);
+
+  // Add card to array of cards that are in play
+  cardsInPlay.push(cards[cardId]);
+
+  // Check to see if two cards have been played
+  if (cardsInPlay.length === 2) {
+    // If so, call the checkForMatch function
+    checkForMatch();
+  }
+};
+
+// Call the flipCard function
+flipCard(0);
+// Call the flipCard function
+flipCard(2);
